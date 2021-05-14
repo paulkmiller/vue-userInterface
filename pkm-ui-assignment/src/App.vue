@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <UserIndexAlt />
+    <UserIndex />
   </div>
 </template>
 
 <script>
-import UserIndexAlt from './components/UserIndexAlt.vue'
+import UserIndex from './components/UserIndex.vue'
 
 export default {
   name: 'App',
   components: {
-    UserIndexAlt
+    UserIndex
   }
 }
 </script>
