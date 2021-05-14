@@ -1,12 +1,14 @@
 <template>
   <div>
-    <p>{{ userName }}</p>
+    <p>{{ user.userName }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'UserShow',
-  props: 'userName'
+  props: {
+      user: { type: Object }
+  }
 }
 </script>

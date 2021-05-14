@@ -1,7 +1,9 @@
 <template>
   <div>
     <h4>Users Page</h4>
-    <UserShow />
+    <div v-for="user in users" v-bind:key="user">
+        <UserShow v-bind:user="user"/>
+    </div>
   </div>
 </template>
 
@@ -14,10 +16,7 @@ export default {
     UserShow
   },
     data: function(){
-    return [
-        {userName: 'Paul'},
-        {userName: 'Sam'}
-    ]
+    return { users:[]}
   }
 }
 </script>
