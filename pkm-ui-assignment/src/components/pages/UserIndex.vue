@@ -1,37 +1,43 @@
 <template>
-  <section>
-    <h1>getUsers()</h1>
-    <div class="container">
-      <div v-for="user in users" v-bind:key="user.id" >
-        <UserShow v-bind:user="user"/>
-      </div>
-    </div>
-  </section>
+  <v-content class="container align-center px-1">
+    <h2 class="font-weight-light mb-2">Admin UI</h2>
+    <v-card>
+      <v-data-table :headers="headers" :items="items"> </v-data-table>
+    </v-card>
+  </v-content>
 </template>
 
 
 <script>
-import UserShow from './UserShow.vue'
-import { APIService } from "../../APIService"
+// import UserShow from './UserShow.vue'
+import { APIService } from "../../APIService";
 
 const apiService = new APIService();
 
 export default {
   name: "UserIndexAlt",
-  components: {
-    UserShow
-  },
-   data: function(){
-    return { 
-      users: [], 
-      numberOfUsers: 0 
-    }
+  components: {},
+  data: function () {
+    return {
+      users: [],
+      numberOfUsers: 0,
+      header: [
+        {
+          text: "",
+          align: "",
+          sortable: false,
+          value: "name",
+        },
+        { text: "Calories", value: "calories" },
+        { text: "Fat(g)", value: "fat" },
+      ],
+    };
   },
   methods: {
     getUsers() {
       apiService.getUsers().then((data) => {
-        this.users = data
-        this.numberOfUsers = data.count
+        this.users = data;
+        this.numberOfUsers = data.count;
       });
     },
   },
@@ -41,7 +47,8 @@ export default {
 };
 </script>
 
-
 <style scope>
-  .container h4 { display: inline-block ;}
+.container h4 {
+  display: inline-block;
+}
 </style>
