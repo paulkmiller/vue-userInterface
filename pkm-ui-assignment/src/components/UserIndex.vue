@@ -9,7 +9,6 @@
 
 <script>
 import UserShow from './UserShow.vue'
-// import fetch from 'fetch'
 import axios from 'axios'
 
 export default {
@@ -20,9 +19,6 @@ export default {
     data: function(){
     return { users:[]}
   },
-//   created(){
-//       fetch('http://localhost:8005/api/systemusers').then(response => response.json()).then( data => (this.users = data.results))
-//   }
   created(){
       axios.get('http://localhost:8005/api/systemusers').then(response => (this.users = response.data.results))
   }
