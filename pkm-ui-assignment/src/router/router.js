@@ -10,17 +10,17 @@ export default new Router({
       path: "/",
       alias: "/users",
       name: "users",
-      component: () => import("../components/UserIndex")
+      component: () => import("./../components/pages/UserIndex")
     },
     {
       path: "/users/:id",
       name: "user-details",
-      component: () => import("../components/UserShow")
+      component: () => import("./../components/pages/UserShow")
     },
     {
       path: "/test",
       name: "add",
-      component: () => import("../components/UserAdd")
+      component: () => import("./../components/pages/UserAdd")
     }
   ]
 });

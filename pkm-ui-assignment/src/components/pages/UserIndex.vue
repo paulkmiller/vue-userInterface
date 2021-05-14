@@ -12,7 +12,7 @@
 
 <script>
 import UserShow from './UserShow.vue'
-import { APIService } from "../APIService"
+import { APIService } from "../../APIService"
 
 const apiService = new APIService();
 
