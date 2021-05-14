@@ -17,7 +17,7 @@ export default {
     UserShow
   },
     data: function(){
-    return { users:[]}
+    return { users:[] }
   },
   created(){
       axios.get('http://localhost:8005/api/systemusers').then(response => (this.users = response.data.results))

@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import UserIndexAlt from './components/UserIndexAlt.vue'
+import UserIndex from './components/UserIndexAlt.vue'
 
 export default {
   name: 'App',
   components: {
-    UserIndexAlt
+    UserIndex
   }
 }
 </script>
