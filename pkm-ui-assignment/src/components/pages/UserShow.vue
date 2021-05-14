@@ -1,7 +1,13 @@
 <template>
-  <div class="UserShow">
-      <p>{{ user.displayname }}</p>
-  </div>
+  <v-main class="container align-center px-1">
+    <h2 class="font-weight-light mb-2">Admin UI</h2>
+    <v-card>
+      <v-data-table 
+      :headers="headers" 
+      :items="users"> 
+      </v-data-table>
+    </v-card>
+  </v-main>
 </template>
 
 <script>
