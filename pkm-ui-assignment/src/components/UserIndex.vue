@@ -1,16 +1,23 @@
 <template>
   <div>
     <h4>Users Page</h4>
+    <UserShow />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import UserShow from './UserShow.vue'
 
 export default {
-  name: 'App',
-//   components: {
-//     HelloWorld
-//   }
+  name: 'UserIndex',
+  components: {
+    UserShow
+  },
+    data: function(){
+    return [
+        {userName: 'Paul'},
+        {userName: 'Sam'}
+    ]
+  }
 }
 </script>
