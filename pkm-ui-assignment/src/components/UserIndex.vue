@@ -1,17 +1,6 @@
 <template>
   <section>
     <h1>getUsers()</h1>
-
-    <div class="container">
-      <div>
-        <h4>#</h4>
-        <h4>First Name</h4>
-        <h4>Last Name</h4>
-        <h4>Email</h4>
-        <h4>Username</h4>
-        <h4>Actions</h4>
-      </div>
-    </div>
     <div class="container">
       <div v-for="user in users" v-bind:key="user.id" >
         <UserShow v-bind:user="user"/>
