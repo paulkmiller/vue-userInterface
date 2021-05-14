@@ -5,7 +5,20 @@ export class APIService{
 
     getUsers() {
         const url = `${API_URL}/api/systemusers/`;
-        return axios.get(url).then(response => response.data.results);
+        this.users = []
+        return axios.get(url).then((response) => {
+            // load the API response into items for the datatable
+            this.users = response.data.results.map((user)=> {
+                return {
+                    id: user.id,
+                    name: user.firstname + user.lastname,
+                    description: user.description,
+                    email: user.email
+                }
+            }).catch((error) => {
+                console.log(error);
+            })
+        });
     }
 
     getUser(id) {

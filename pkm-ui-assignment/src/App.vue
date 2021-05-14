@@ -1,8 +1,10 @@
 <template>
-  <v-app id="app">
-    <router-view />
-    <UserIndex />
-  </v-app>
+  <div id="app">
+    <v-app >
+      <router-view />
+      <UserIndex />
+    </v-app>
+  </div>
 </template>
 
 <script>
