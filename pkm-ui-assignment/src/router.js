@@ -17,10 +17,10 @@ export default new Router({
       name: "user-details",
       component: () => import("./components/UserShow")
     },
-    {
-      path: "/add",
-      name: "add",
-      component: () => import("./components/UserAdd")
-    }
+    // {
+    //   path: "/add",
+    //   name: "add",
+    //   component: () => import("./components/UserAdd")
+    // }
   ]
 });

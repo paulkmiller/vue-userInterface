@@ -8,8 +8,8 @@ export class APIService{
         return axios.get(url).then(response => response.data.results);
     }
 
-    getUser(pk) {
-        const url = `${API_URL}/api/systemusers/${pk}`;
+    getUser(id) {
+        const url = `${API_URL}/api/systemusers/${id}`;
         return axios.get(url).then(response => response.data.results);
     }
 
