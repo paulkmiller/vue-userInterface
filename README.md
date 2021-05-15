@@ -10,3 +10,21 @@ npm i --save-dev --no-optional vuetify-loader vue-cli-plugin-vuetify sass node-s
 
 npm i --no-optional --save vuetify vue-router roboto-fontface @mdi/font
 ``` 
+
+
+### **To run the project, clone the repo, navgigate to `pkm-ui-assignment` and run `npm install`. Once the installation has finished, run `npm run serve` to get things going.**
+--------------
+
+**What you will *not* find:**
+* A perfect UI
+* A fully functional UI
+* The most elegant code
+
+**What you *will* find:**
+* Detailed commit notes
+* Branch management to prototype ideas before merging into main
+* The efforts of a man who knew nothing of Vue prior to this assignment other than its name and its mild relation to React
+
+I very much like Vue over React now. Like I said earlier, Vue feels far more precise; you can drop Vue components into a project without it dominating the entire tree, unlike the behement that is React. 
+
+Thank you very much for your time and consideration. I am now going to bed.
