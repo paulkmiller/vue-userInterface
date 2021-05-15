@@ -25,6 +25,5 @@ npm i --no-optional --save vuetify vue-router roboto-fontface @mdi/font
 * Branch management to prototype ideas before merging into main
 * The efforts of a man who knew nothing of Vue prior to this assignment other than its name and its mild relation to React
 
-I very much like Vue over React now. Like I said earlier, Vue feels far more precise; you can drop Vue components into a project without it dominating the entire tree, unlike the behement that is React. 
 
-Thank you very much for your time and consideration. I am now going to bed.
+Thank you very much for your time and consideration. I hope this is enough to continue our conversation. This assessment, if anything, has taught me that I quite like Vue, and will be cloning this assignment to continue on my own time. You will be able to find the project in my Github repo if you're intereted in my progress.
