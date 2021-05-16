@@ -24,7 +24,7 @@ npm install
 ```shell
 cd vue-userInterface
 
-cd api
+npm run api
 
 npm run serve 
 ```
