@@ -5,9 +5,9 @@
 
 ## Run the Project
 ```
-git clone https://github.com/paulkmiller/jumpcloud-vue-ui-assessment.git
+git clone https://github.com/paulkmiller/vue-userInterface.git
 
-cd jumpcloud-vui-ui-assessment.git/pkm-ui-assignment
+cd jumpcloud-vui-ui-assessment.git/vue-userInterface
 
 npm install
 
