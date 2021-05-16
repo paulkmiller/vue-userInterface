@@ -2,8 +2,6 @@
 
 ## Instructions
 
-* [System Users API](https://docs.jumpcloud.com/1.0/systemusers)
-
 1. Go to https://www.jumpcloud.com, sign up for a free account, and activate it.
 
 2. Click on your user name in the upper right and select API settings from the drop down.
@@ -13,6 +11,7 @@
 5. The web server is a simple express based app that proxies requests from `http://localhost:8005/api` to
    `https://console.jumpcloud.com/api`.
 6. API requests:
+   * [System Users API](https://docs.jumpcloud.com/1.0/systemusers)
    ```http
    GET /api/systemusers
    GET /api/systemusers/{id}
