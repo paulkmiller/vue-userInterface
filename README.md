@@ -3,13 +3,28 @@
 * [Vue Docs](https://vuejs.org/v2/guide/)
 * [Vuetify Docs](https://vuetifyjs.com/en/components/calendars/)
 
-## Run the Project
-```
+## Setup
+```shell
 git clone https://github.com/paulkmiller/vue-userInterface.git
+```
 
-cd jumpcloud-vui-ui-assessment.git/vue-userInterface
+### Installation
+
+```shell
+cd vue-userInterface
 
 npm install
+
+cd ../api
+
+npm install
+```
+
+### Project Startup
+```shell
+cd vue-userInterface
+
+cd api
 
 npm run serve 
 ```
