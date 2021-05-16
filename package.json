@@ -1,11 +1,12 @@
 {
-  "name": "pkm-ui-assignment",
+  "name": "vue-userinterface",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "api": "cd api && npm run start",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "serve": "vue-cli-service serve"
   },
   "dependencies": {
     "@mdi/font": "^5.9.55",
