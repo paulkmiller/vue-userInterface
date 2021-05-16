@@ -6,11 +6,7 @@
 ## Setup
 ```shell
 git clone https://github.com/paulkmiller/vue-userInterface.git
-```
 
-### Installation
-
-```shell
 cd vue-userInterface
 
 npm install
