@@ -7,9 +7,8 @@
         :items="users"
         mobile-breakpoint="800"
         class="elevation-0"> 
-        
-      <UserEdit />
       </v-data-table>
+        <UserEdit />
       <UserSave />
     </v-card>
   </v-main>
@@ -44,14 +43,15 @@ export default {
       dialog: false,
       editedUser: {},
     }
-  },
-  mounted() {
-    this.getUsers();
-  },
+  }
+  ,
   methods: {
     getUsers() {
       apiService.getUsers(this)
     }
+  },
+  mounted() {
+    this.getUsers();
   }
 }
 </script>

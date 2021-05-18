@@ -1,21 +1,8 @@
 <template v-slot:user.actions="{ user }">
   <!-- this dialog is used for both edit and delete -->
   <div class="text-truncate">
-    <v-icon 
-        small 
-        class="mr-2" 
-        @click="showEditDialog(user)" 
-        color="primary"
-    >
-      mdi-pencil
-    </v-icon>
-    <v-icon 
-        small 
-        @click="deleteUser(user)" 
-        color="red"
-    > 
-        mdi-delete
-    </v-icon>
+    <v-icon small @click="showEditDialog(user)" color="primary" class="mr-2">mdi-pencil</v-icon>
+    <v-icon small @click="deleteUser(user)" color="red">mdi-delete</v-icon>
   </div>
 </template>
 

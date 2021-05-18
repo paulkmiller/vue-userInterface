@@ -14,7 +14,6 @@ export class APIService{
                     name: user.firstname + user.lastname,
                     description: user.description,
                     email: user.email
-                    
                     // ...user.fields
                 }
             })
@@ -34,6 +33,7 @@ export class APIService{
             results: dataSource
         }
 
+        console.log(id);
         console.log(data);
 
         if (id) {
@@ -49,7 +49,7 @@ export class APIService{
         axios[method](url,
             data,
             { headers: {
-                "Access-Control-Allow-Methods": 'GET, PUT, POST, DELETE, PATCH, OPTIONS',
+                "Access-Control-Allow-Methods": 'GET, OPTIONS, PUT, POST, DELETE',
                 Authorization: "x-api-key " + "5b7cf4ff5e29018f43a7a6ba9f0ee802a5e358ca",
                 "Accept" : "application/json",
                 "Content-Type":"application/json"
@@ -67,9 +67,10 @@ export class APIService{
             this.dialog = !this.dialog
         })
     }
-    deleteUser(dataSource) {
-        let id = dataSource.id
-        let idx = dataSource.users.findIndex(user => user.id===id)
+
+    deleteUser(user) {
+        let id = user.id
+        let idx = this.users.findIndex(user => user.id===id)
         if (confirm('Are you sure you want to delete this?')) {
             axios.delete('${API_URL}/api/systemusers/${id}',
                 { headers: {
