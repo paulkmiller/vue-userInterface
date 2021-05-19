@@ -7,11 +7,11 @@ export class APIService{
         const url = `${API_URL}/api/systemusers/`;
         dataSource.users = []
         return axios.get(url).then((response) => {
-            // load the API response into items for the datatable
+            // load the API response into users for the datatable
             dataSource.users = response.data.results.map((user) => {
                 return {
                     id: user.id,
-                    name: user.firstname + user.lastname,
+                    name: user.firstname + ' ' + user.lastname,
                     description: user.description,
                     email: user.email
                     // ...user.fields
@@ -37,7 +37,7 @@ export class APIService{
         console.log(data);
 
         if (id) {
-            // if the item has an id, update an existing item
+            // if the user has an id, update an existing user
             method = "patch"
             url = `${API_URL}/api/systemusers/${id}`
 
@@ -49,8 +49,7 @@ export class APIService{
         axios[method](url,
             data,
             { headers: {
-                "Access-Control-Allow-Methods": 'GET, OPTIONS, PUT, POST, DELETE',
-                Authorization: "x-api-key " + "5b7cf4ff5e29018f43a7a6ba9f0ee802a5e358ca",
+                "Access-Control-Allow-Methods": 'GET, OPTIONS, PUT, POST',
                 "Accept" : "application/json",
                 "Content-Type":"application/json"
             }
@@ -59,7 +58,7 @@ export class APIService{
                 // add new user to state
                 this.editedUser.id = response.data.id
                 if (!id) {
-                    // add the new item to items state
+                    // add the new user to users state
                     this.dataSource.push(this.editedUser)
                 }
                 this.editedUser = {}

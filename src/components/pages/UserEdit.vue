@@ -1,4 +1,4 @@
-<template v-slot:user.actions="{ user }">
+<template v-slot:item.actions="{ item }" :item="item" >
   <!-- this dialog is used for both edit and delete -->
   <div class="text-truncate">
     <v-icon small @click="showEditDialog(user)" color="primary" class="mr-2">mdi-pencil</v-icon>
@@ -15,6 +15,7 @@ export default {
   name: "UserEdit",
   props: {
     user: { type: Object },
+    item: { type: Object }
   },
   methods: {
     showEditDialog(user) {

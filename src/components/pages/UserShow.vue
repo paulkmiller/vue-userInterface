@@ -7,6 +7,7 @@
         :items="users"
         mobile-breakpoint="800"
         class="elevation-0"> 
+        <UserEdit v-slot:item.actions="{ item }" :item="item" />
       </v-data-table>
         <UserEdit />
       <UserSave />
@@ -33,15 +34,27 @@ export default {
    data: function(){
     return { 
       headers: [
-          { text: 'Id', value: 'id' },
+          { text: 'Id', value: 'id', width:"180" },
           { text: 'Name', value: 'name' },
-          { text: 'Description', value: 'description', sortable: false, width:"100" },
+          { text: 'Description', value: 'description', sortable: false },
           { text: 'Email', value: 'email', name:'email', width:"180" },
           { text: 'Action', value: 'actions', sortable: false },
       ],
       users: [],
       dialog: false,
-      editedUser: {},
+      editedIndex: -1,
+      editedUser: {
+        id: '',
+        name: '',
+        description: '',
+        email: '',
+      },
+      defaultUser: {
+        id: '',
+        name: '',
+        description: '',
+        email: '',
+      },
     }
   }
   ,
