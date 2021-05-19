@@ -1,4 +1,4 @@
-<template v-slot:item.actions="{ item }" :item="item" >
+<template>
   <!-- this dialog is used for both edit and delete -->
   <div class="text-truncate">
     <v-icon small @click="showEditDialog(user)" color="primary" class="mr-2">mdi-pencil</v-icon>
@@ -14,15 +14,16 @@ const apiService = new APIService();
 export default {
   name: "UserEdit",
   props: {
-    user: { type: Object }
+    user: { type: Object },
+    item: { type: Object }
   },
   methods: {
     showEditDialog(user) {
         this.editedUser = user||{}
         this.dialog = !this.dialog
     },
-    deleteUser(){
-      apiService.deleteUser(this)
+    deleteUser(user){
+      apiService.deleteUser(this, user)
     }
   }
 };

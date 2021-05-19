@@ -26,15 +26,17 @@ export class APIService{
     saveUser(dataSource){
         /* this is used for both creating and updating API records */
         let method = "post"
-        let url = `${API_URL}/api/systemusers/${id}`
+        let url = `${API_URL}/api/systemusers/`
         let id = dataSource.id
 
         let data = {
             results: dataSource
         }
 
-        console.log(id);
-        console.log(data);
+        let payload = {
+            username: dataSource.displayname,
+            email: dataSource.email,
+        }
 
         if (id) {
             // if the user has an id, update an existing user
@@ -46,14 +48,7 @@ export class APIService{
         }
 
         // save the record
-        axios[method](url,
-            data,
-            { headers: {
-                "Access-Control-Allow-Methods": 'GET, OPTIONS, PUT, POST',
-                "Accept" : "application/json",
-                "Content-Type":"application/json"
-            }
-        }).then((response) => {
+        axios[method](url, payload).then((response) => {
             if (response.data && response.data.id) {
                 // add new user to state
                 this.editedUser.id = response.data.id
@@ -67,11 +62,11 @@ export class APIService{
         })
     }
 
-    deleteUser(user) {
-        console.log("Deteted");
-        console.log(user.id);
+    deleteUser(dataSource, user) {
+        console.log("Detected");
+        console.log(dataSource.users);
         let id = user.id
-        let idx = this.users.findIndex(user => user.id===id)
+        let idx = dataSource.users.findIndex(user => user.id===id)
 
         if (confirm('Are you sure you want to delete this?')) {
             axios.delete('${API_URL}/api/systemusers/${id}',
@@ -79,8 +74,8 @@ export class APIService{
                     "Access-Control-Allow-Methods": 'DELETE',
                     "Content-Type":"application/json",
                 }
-            }).then((response) => {
-                response.users.splice(idx, 1)
+            }).then(() => {
+                dataSource.users.splice(idx, 1)
             })
         }
     }
