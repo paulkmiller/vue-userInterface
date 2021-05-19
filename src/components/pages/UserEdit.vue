@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import { APIService } from "../../APIService"
+// import { APIService } from "../../APIService"
 
-const apiService = new APIService();
+// const apiService = new APIService();
 
 export default {
   name: "UserEdit",
@@ -23,7 +23,7 @@ export default {
         this.dialog = !this.dialog
     },
     deleteUser(user){
-      apiService.deleteUser(this, user)
+      this.$emit('user-delete', user)
     }
   }
 };

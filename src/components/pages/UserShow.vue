@@ -8,7 +8,7 @@
         mobile-breakpoint="800"
         class="elevation-0"> 
         <template v-slot:item.actions="{ item }" :item="item">
-          <UserEdit v-bind:user="item"/>
+          <UserEdit v-on:user-delete="deleteUser" v-bind:user="item"/>
         </template>
       </v-data-table>
       <UserSave />
@@ -54,6 +54,9 @@ export default {
     showEditDialog(user) {
         this.editedUser = user||{}
         this.dialog = !this.dialog
+    },
+    deleteUser(user){
+      apiService.deleteUser(this, user)
     }
   },
   mounted() {

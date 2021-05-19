@@ -29,9 +29,7 @@ export class APIService{
         let url = `${API_URL}/api/systemusers/`
         let id = dataSource.id
 
-        let data = {
-            results: dataSource
-        }
+        let data = { results: dataSource }
 
         let payload = {
             username: dataSource.displayname,
@@ -40,7 +38,7 @@ export class APIService{
 
         if (id) {
             // if the user has an id, update an existing user
-            method = "patch"
+            method = "put"
             url = `${API_URL}/api/systemusers/${id}`
 
             // remove id from data and hope that does the trick
@@ -63,18 +61,14 @@ export class APIService{
     }
 
     deleteUser(dataSource, user) {
-        console.log("Detected");
-        console.log(dataSource.users);
         let id = user.id
         let idx = dataSource.users.findIndex(user => user.id===id)
 
+        console.log("User: " + user);
+        console.log("User.id: " + user.id);
+
         if (confirm('Are you sure you want to delete this?')) {
-            axios.delete('${API_URL}/api/systemusers/${id}',
-                { headers: {
-                    "Access-Control-Allow-Methods": 'DELETE',
-                    "Content-Type":"application/json",
-                }
-            }).then(() => {
+            axios.delete(`${API_URL}/api/systemusers/${id}`).then(() => {
                 dataSource.users.splice(idx, 1)
             })
         }
