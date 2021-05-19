@@ -7,9 +7,14 @@
         :items="users"
         mobile-breakpoint="800"
         class="elevation-0"> 
-        <UserEdit v-slot:item.actions="{ item }" :item="item" />
+        <template v-slot:item.actions="{ item }" :item="item" >
+          <!-- this dialog is used for both edit and delete -->
+          <div class="text-truncate">
+            <v-icon small @click="showEditDialog(user)" color="primary" class="mr-2">mdi-pencil</v-icon>
+            <v-icon small @click="deleteUser(user)" color="red">mdi-delete</v-icon>
+          </div>
+        </template>
       </v-data-table>
-        <UserEdit />
       <UserSave />
     </v-card>
   </v-main>
@@ -17,7 +22,7 @@
 
 <script>
 import { APIService } from "../../APIService"
-import UserEdit from './UserEdit.vue'
+// import UserEdit from './UserEdit.vue'
 import UserSave from './UserSave.vue'
 
 const apiService = new APIService();
@@ -25,10 +30,11 @@ const apiService = new APIService();
 export default {
   name: 'UserShow',
   props: {
-      user: { type: Object }
+      user: { type: Object },
+      item: { type: Object }
   },
   components: {
-    UserEdit,
+    // UserEdit,
     UserSave
   },
    data: function(){
@@ -43,24 +49,19 @@ export default {
       users: [],
       dialog: false,
       editedIndex: -1,
-      editedUser: {
-        id: '',
-        name: '',
-        description: '',
-        email: '',
-      },
-      defaultUser: {
-        id: '',
-        name: '',
-        description: '',
-        email: '',
-      },
+      editedUser: {}
     }
-  }
-  ,
+  },
   methods: {
     getUsers() {
       apiService.getUsers(this)
+    },
+    showEditDialog(user) {
+        this.editedUser = user||{}
+        this.dialog = !this.dialog
+    },
+    deleteUser(){
+      apiService.deleteUser(this)
     }
   },
   mounted() {

@@ -14,8 +14,7 @@ const apiService = new APIService();
 export default {
   name: "UserEdit",
   props: {
-    user: { type: Object },
-    item: { type: Object }
+    user: { type: Object }
   },
   methods: {
     showEditDialog(user) {

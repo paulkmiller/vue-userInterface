@@ -68,8 +68,11 @@ export class APIService{
     }
 
     deleteUser(user) {
+        console.log("Deteted");
+        console.log(user.id);
         let id = user.id
         let idx = this.users.findIndex(user => user.id===id)
+
         if (confirm('Are you sure you want to delete this?')) {
             axios.delete('${API_URL}/api/systemusers/${id}',
                 { headers: {
